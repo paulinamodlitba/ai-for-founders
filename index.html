@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gen AI för grundare — praktiska tips, prompter och verktyg</title>
-    <meta name="description" content="Konkreta sätt att använda generativ AI som grundare: innehåll, infografik, sociala medier, siffror, slides, omvärldsanalys och go-to-market. Med copy-paste-prompter och verktyg.">
+    <title>Gen AI för grundare</title>
+    <meta name="description" content="Konkreta sätt att använda generativ AI som grundare: innehåll, infografik, sociala medier, siffror, slides, omvärldsanalys och go-to-market. Med prompter du kan kopiera rakt av och steg-för-steg-guider.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,21 +28,12 @@
             background: linear-gradient(135deg, #FFF6F0 0%, #FFE8E0 100%);
         }
 
-        .hero .eyebrow {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #C87C5C;
-            margin-bottom: 18px;
-        }
-
         .hero h1 {
             font-size: 56px;
             font-weight: 700;
             line-height: 1.07;
             letter-spacing: -0.005em;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             color: #411B38;
             max-width: 820px;
             margin-left: auto;
@@ -50,14 +41,21 @@
         }
 
         .hero .subtitle {
-            font-size: 24px;
-            line-height: 1.3;
+            font-size: 22px;
+            line-height: 1.4;
             font-weight: 400;
             color: #7A4864;
             margin-bottom: 8px;
-            max-width: 680px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .hero .bling-note {
+            font-size: 16px;
+            color: #C87C5C;
+            font-weight: 500;
+            margin-top: 16px;
         }
 
         .container {
@@ -83,9 +81,9 @@
         .section-lead {
             text-align: center;
             font-size: 19px;
-            line-height: 1.5;
+            line-height: 1.55;
             color: #7A4864;
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto 40px;
         }
 
@@ -98,42 +96,6 @@
             border: 1px solid rgba(65, 27, 56, 0.06);
         }
 
-        .card h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #411B38;
-        }
-
-        .card p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #7A4864;
-        }
-
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .card li {
-            font-size: 17px;
-            line-height: 1.6;
-            padding: 10px 0;
-            color: #411B38;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .card li:before {
-            content: "•";
-            font-size: 20px;
-            margin-right: 12px;
-            color: #C87C5C;
-            font-weight: 600;
-        }
-
-        /* Prompt-grunderna note box */
         .note-box {
             background: white;
             border-radius: 18px;
@@ -238,7 +200,7 @@
             letter-spacing: 0.06em;
             text-transform: uppercase;
             color: #C87C5C;
-            margin: 28px 0 14px;
+            margin: 30px 0 14px;
         }
 
         .tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -254,12 +216,41 @@
             font-weight: 500;
         }
 
+        /* Så gör du, numbered walkthrough */
+        .howto { counter-reset: step; list-style: none; padding: 0; margin-top: 4px; }
+        .howto li {
+            position: relative;
+            padding: 4px 0 18px 50px;
+            font-size: 16.5px;
+            line-height: 1.55;
+            color: #411B38;
+        }
+        .howto li:last-child { padding-bottom: 0; }
+        .howto li:before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #C87C5C 0%, #D68D6C 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 34px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .howto strong { font-weight: 600; }
+
         /* Prompt block with copy button */
         .prompt {
             position: relative;
             background: #411B38;
             border-radius: 12px;
             padding: 22px 24px;
+            padding-top: 46px;
             margin-top: 14px;
             color: #FFE8E0;
             font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
@@ -316,7 +307,7 @@
         }
 
         .bling h2 { font-size: 38px; font-weight: 700; margin-bottom: 14px; color: white; }
-        .bling .lead { font-size: 19px; line-height: 1.6; color: #FFE8E0; margin-bottom: 36px; max-width: 640px; }
+        .bling .lead { font-size: 19px; line-height: 1.6; color: #FFE8E0; margin-bottom: 36px; max-width: 660px; }
 
         .bling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
@@ -344,20 +335,6 @@
         .tool-card .name { font-size: 21px; font-weight: 600; color: #411B38; margin-bottom: 4px; }
         .tool-card .use { font-size: 14px; font-weight: 600; color: #C87C5C; margin-bottom: 12px; }
         .tool-card p { font-size: 16px; line-height: 1.55; color: #7A4864; }
-        .tool-card .mine {
-            display: inline-block;
-            margin-top: 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #C87C5C;
-            background: #FFF6F0;
-            padding: 5px 12px;
-            border-radius: 980px;
-            border: 1px solid rgba(200, 124, 92, 0.3);
-        }
-
-        /* Pitfalls */
-        .pitfalls li { align-items: flex-start; }
 
         .footer {
             text-align: center;
@@ -374,7 +351,7 @@
         @media (max-width: 768px) {
             .hero { padding: 70px 20px 50px; }
             .hero h1 { font-size: 38px; }
-            .hero .subtitle { font-size: 19px; }
+            .hero .subtitle { font-size: 18px; }
             .section-title { font-size: 30px; }
             .card, .panel, .note-box { padding: 32px 24px; }
             .bling { padding: 44px 28px; }
@@ -388,25 +365,24 @@
 </head>
 <body>
     <div class="hero">
-        <p class="eyebrow">We Should Be Friends · Leave-behind</p>
         <h1>Gen AI för grundare</h1>
-        <p class="subtitle">Konkreta sätt att låna kompetensen du ännu inte har råd att anställa. Med prompter du kan kopiera rakt av.</p>
-        <p class="subtitle" style="font-size:17px; color:#C87C5C; margin-top:14px;">Sparat från Paulinas föreläsning inför Bling Startup</p>
+        <p class="subtitle">Det här är verktygen och greppen jag själv använder, och som jag visar entreprenörer som vill komma längre utan stor budget. Allt är konkret. Prompterna kan du kopiera rakt av och testa redan idag.</p>
+        <p class="bling-note">Jag har samlat det här till er som tävlar i Bling Startup i höst.</p>
     </div>
 
     <div class="container">
 
-        <!-- PROMPT-GRUNDERNA -->
+        <!-- GRUNDERNA -->
         <div class="section" id="grunderna">
-            <h2 class="section-title">Den enda färdigheten du behöver</h2>
-            <p class="section-lead">Allt nedan bygger på samma sak: att be om rätt grej på rätt sätt. Lär dig de här fyra delarna så klarar du resten själv.</p>
+            <h2 class="section-title">Allt börjar med hur du frågar</h2>
+            <p class="section-lead">Nästan allt på den här sidan bygger på en enkel sak: att förklara tydligt vad du vill ha. Tänk dig att du brifar en ny kollega. Ju mer den vet om dig, dina kunder och vad du är ute efter, desto bättre blir det som kommer tillbaka.</p>
             <div class="note-box">
-                <strong>Tänk på en prompt som en brief till en ny medarbetare.</strong> Ju mer den vet om dig, dina kunder och vad du vill ha, desto bättre blir svaret. Och precis som med en kollega: första utkastet är sällan det sista. Be om ändringar, ge exempel på vad du gillar, och peta tills det sitter.
+                Och precis som med en ny kollega är första utkastet sällan det sista. Be om ändringar, visa exempel på vad du gillar, och peta tills det sitter. Fyra delar gör nästan vilken prompt som helst bättre:
                 <div class="anatomy">
-                    <div><span>1. Roll</span><p>"Du är en erfaren go-to-market-rådgivare för tidiga B2B-bolag."</p></div>
-                    <div><span>2. Kontext</span><p>Vad bygger du, för vem, var står du nu? Klistra in riktig data.</p></div>
-                    <div><span>3. Mål &amp; format</span><p>Vad ska komma ut? Lista, tabell, 5 rubriker, 200 ord?</p></div>
-                    <div><span>4. Iterera</span><p>"Gör den vassare." "För säljig — skriv om i min ton." "Ge tre alternativ till."</p></div>
+                    <div><span>Roll</span><p>"Du är en erfaren go-to-market-rådgivare för tidiga B2B-bolag."</p></div>
+                    <div><span>Kontext</span><p>Vad bygger du, för vem, var står du nu? Klistra in riktig data och text.</p></div>
+                    <div><span>Mål och format</span><p>Vad ska komma ut? En lista, en tabell, fem rubriker, 200 ord?</p></div>
+                    <div><span>Iterera</span><p>"Gör den vassare." "För säljig, skriv om i min ton." "Ge tre alternativ till."</p></div>
                 </div>
             </div>
         </div>
@@ -414,7 +390,7 @@
         <!-- ANVÄNDNINGSOMRÅDEN -->
         <div class="section" id="omraden">
             <h2 class="section-title">Sju saker du kan göra redan idag</h2>
-            <p class="section-lead">Klicka dig mellan områdena. Varje flik har vad det är bra för, vilka verktyg som passar, prompter att kopiera och konkreta exempel.</p>
+            <p class="section-lead">Klicka dig mellan områdena. Varje flik har vad det är bra för, vilka verktyg som passar, en gång igenom steg för steg, prompter att kopiera och konkreta exempel.</p>
 
             <div class="tabs">
                 <button class="tab-btn active" data-tab="innehall">Innehåll &amp; copy</button>
@@ -430,14 +406,22 @@
             <div class="tab-content active" id="innehall">
                 <div class="panel">
                     <h3>Innehåll &amp; copy</h3>
-                    <p class="what">Hemsidetexter, nyhetsbrev, säljmejl, produktbeskrivningar, FAQ. AI tar dig från tomt blad till hyfsat utkast på minuter, så lägger du tiden där den gör skillnad: att göra texten till din.</p>
+                    <p class="what">Hemsidetexter, nyhetsbrev, säljmejl, produktbeskrivningar, FAQ. AI tar dig från tomt blad till hyfsat utkast på minuter. Sedan lägger du tiden där den gör skillnad, på att göra texten till din.</p>
 
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span></div>
 
+                    <div class="label">Så gör du</div>
+                    <ol class="howto">
+                        <li><strong>Samla ditt råmaterial.</strong> Gamla mejl, anteckningar, en röststyrd inspelning där du berättar vad du menar. AI:n skriver alltid bättre med din input än utan.</li>
+                        <li><strong>Be om ett utkast i din ton.</strong> Klistra in en text du själv gillar som exempel, så fångar den ditt sätt att skriva.</li>
+                        <li><strong>Iterera högt.</strong> "Korta till hälften." "Ta bort floskler." "Ge mig tre rubriker till att välja mellan."</li>
+                        <li><strong>Putsa själv till sist.</strong> Läs högt. Det som skaver tar du bort. Nu låter det som du.</li>
+                    </ol>
+
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Du är copywriter med känsla för en varm, mänsklig och rak ton.
-Här är mitt bolag: [klistra in kort beskrivning + vem ni hjälper].
+Här är mitt bolag: [klistra in kort beskrivning och vem ni hjälper].
 Skriv en hero-text till startsidan: en rubrik på max 8 ord,
 en underrubrik på en mening, och en knapp-text.
 Ge mig tre olika varianter med olika känsla.</div>
@@ -445,13 +429,19 @@ Ge mig tre olika varianter med olika känsla.</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Här är ett utkast till säljmejl: [klistra in].
 Det känns för långt och för säljigt. Korta till hälften,
 behåll det konkreta erbjudandet, och skriv i en ton som låter
-som en vass men hjälpsam person — inte ett företag.</div>
+som en vass men hjälpsam person, inte ett företag.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="prompt"><button class="copy">Kopiera</button>Här är de frågor kunder faktiskt ställer mig: [klistra in en lista].
+Skriv en FAQ med tydliga, ärliga svar i min ton.
+Sortera frågorna så att den vanligaste kommer först.</div>
+
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
-                        <li>Skriv om samma budskap för tre olika målgrupper</li>
-                        <li>Gör en FAQ utifrån de frågor kunder faktiskt ställt dig</li>
-                        <li>Översätt och lokalisera texter utan att tappa tonen</li>
+                        <li>Skriv om samma budskap för tre olika målgrupper, till exempel kund, investerare och rekrytering</li>
+                        <li>Gör produktbeskrivningar för en hel kollektion utifrån en mall du gillar</li>
+                        <li>Översätt och lokalisera texter utan att tonen tappas på vägen</li>
+                        <li>Ta ett långt blogginlägg och dra ut ett nyhetsbrev och tre korta inlägg ur det</li>
+                        <li>Be om fem rubrikvarianter att A/B-testa, med en rad om varför var och en kan funka</li>
                     </ul>
                 </div>
             </div>
@@ -465,6 +455,14 @@ som en vass men hjälpsam person — inte ett företag.</div>
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">ChatGPT (bilder)</span><span class="tag">Gemini</span><span class="tag">Canva</span><span class="tag">Claude (för struktur)</span></div>
 
+                    <div class="label">Så gör du</div>
+                    <ol class="howto">
+                        <li><strong>Bestäm den enda sak bilden ska säga.</strong> En tydlig poäng blir alltid en starkare bild än fem.</li>
+                        <li><strong>Be om koncept i text först.</strong> Låt AI:n beskriva tre bildidéer innan något genereras, så väljer du riktning utan att bränna försök.</li>
+                        <li><strong>Generera och var specifik.</strong> Säg stil, färger, känsla och vad som ska vara med. Jordnära, mycket luft, text på svenska.</li>
+                        <li><strong>Putsa i Canva.</strong> Lägg på din logga, dina färger och rätt text, så blir det konsekvent med resten av varumärket.</li>
+                    </ol>
+
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Skapa en enkel infografik som förklarar [din process i 4 steg].
 Stil: ren, mycket luft, varma jordnära färger, inga klyschiga
@@ -474,11 +472,12 @@ ikoner. Tydlig läsordning uppifrån och ner. Text på svenska.</div>
 Föreslå tre olika bildkoncept i text först, så väljer jag ett
 innan du genererar. Undvik clipart-känsla.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
-                        <li>Förvandla en tråkig tabell till en lättläst graf-bild</li>
+                        <li>Förvandla en tråkig tabell till en lättläst graf eller bild</li>
                         <li>Ta fram konsekventa bilder för ett helt kampanjtema</li>
                         <li>Skissa en logotyp- eller färgriktning att ta vidare till en designer</li>
+                        <li>Gör enkla produktbilder med rätt bakgrund och stämning</li>
                     </ul>
                 </div>
             </div>
@@ -487,27 +486,36 @@ innan du genererar. Undvik clipart-känsla.</div>
             <div class="tab-content" id="some">
                 <div class="panel">
                     <h3>Sociala medier</h3>
-                    <p class="what">Innehållsplan, inlägg, och att återanvända det du redan gjort. Spelade du in ett möte eller ett samtal? Transkribera det och klipp ut guldkornen till en hel veckas innehåll.</p>
+                    <p class="what">Innehållsplan, inlägg och konsten att återanvända det du redan gjort. Spelade du in ett möte eller ett samtal? Transkribera det och klipp ut guldkornen till en hel veckas innehåll.</p>
 
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">Descript</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Canva</span></div>
 
+                    <div class="label">Så gör du (återanvänd en inspelning)</div>
+                    <ol class="howto">
+                        <li><strong>Spela in när du pratar om det du kan.</strong> Ett kundsamtal, en intervju, eller bara fem minuter där du berättar en idé rakt in i mobilen.</li>
+                        <li><strong>Transkribera i Descript.</strong> Du får text du kan söka i, klippa och kopiera ur.</li>
+                        <li><strong>Be AI:n hitta guldkornen.</strong> Klistra in transkriberingen och be om de fem mest delningsvärda poängerna, var och en som ett färdigt inlägg.</li>
+                        <li><strong>Lägg i en kalender.</strong> Be om ett schema för fyra veckor och putsa varje inlägg så det låter som du innan du publicerar.</li>
+                    </ol>
+
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Här är en transkribering av ett samtal jag spelade in: [klistra in].
 Hitta de 5 mest delningsvärda insikterna och gör varje insikt
-till ett LinkedIn-inlägg på 4–6 rader. Personlig ton, ingen hashtag-spam,
-en tydlig tanke per inlägg.</div>
+till ett LinkedIn-inlägg på 4 till 6 rader. Personlig ton,
+ingen hashtag-spam, en tydlig tanke per inlägg.</div>
 
                     <div class="prompt"><button class="copy">Kopiera</button>Gör en innehållsplan för fyra veckor på LinkedIn för mitt bolag.
-Vi vill bygga trovärdighet inför [event/lansering].
+Vi vill bygga trovärdighet inför [event eller lansering].
 Variera mellan: bakom kulisserna, en stark åsikt, ett konkret tips,
-och en kundberättelse. Ge mig rubrik + första meningen för varje.</div>
+och en kundberättelse. Ge mig rubrik och första meningen för varje.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
                         <li>Transkribera en podd eller intervju i Descript och bygg en månads inlägg av den</li>
                         <li>Skriv om ett blogginlägg till fem korta inlägg för olika kanaler</li>
                         <li>Ta fram svar på vanliga kommentarer så du slipper börja om varje gång</li>
+                        <li>Gör en enkel karusell i Canva av ditt bästa inlägg</li>
                     </ul>
                 </div>
             </div>
@@ -516,10 +524,19 @@ och en kundberättelse. Ge mig rubrik + första meningen för varje.</div>
             <div class="tab-content" id="siffror">
                 <div class="panel">
                     <h3>Siffror, statistik &amp; growth</h3>
-                    <p class="what">Förstå dina egna siffror utan att vara dataanalytiker. Klistra in en exportfil och be om mönster, eller låt AI:n räkna och visualisera åt dig. Bra för att hitta var tillväxten faktiskt sitter.</p>
+                    <p class="what">Förstå dina egna siffror utan att vara dataanalytiker. Klistra in en exportfil och be om mönster, eller låt AI:n räkna och rita åt dig. Bra för att hitta var tillväxten faktiskt sitter, och var den läcker.</p>
 
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">Claude (Code/Cowork)</span><span class="tag">NotebookLM</span><span class="tag">ChatGPT</span></div>
+
+                    <div class="label">Så gör du (analysera din data)</div>
+                    <ol class="howto">
+                        <li><strong>Exportera datan till en fil.</strong> En CSV från Stripe, Google Analytics, ditt CRM eller en enkät duger fint. Råformat är okej.</li>
+                        <li><strong>Bifoga den i Claude och förklara kolumnerna.</strong> "Kolumn A är datum, B är intäkt, C är kanal." AI:n förstår datan mycket bättre när den vet vad den tittar på.</li>
+                        <li><strong>Be om mönstren och var du läcker.</strong> Be den också vara ärlig om vad datan inte räcker till, så slipper du dra för stora slutsatser av för lite underlag.</li>
+                        <li><strong>Be om en beräkning eller en graf.</strong> Claude kan räkna och visualisera direkt ur filen, till exempel en enkel tratt eller en intäktskurva.</li>
+                        <li><strong>Be om nästa steg.</strong> Vilka tre experiment ger mest, och vad ska du mäta för att veta om de funkade?</li>
+                    </ol>
 
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Här är min försäljnings- och kunddata för senaste halvåret: [bifoga fil].
@@ -527,15 +544,23 @@ Du är en nykter dataanalytiker. Visa de tre tydligaste mönstren,
 peka ut vad som driver tillväxt och vad som läcker, och säg vilka
 slutsatser jag INTE kan dra av så här lite data. Inga gissningar.</div>
 
-                    <div class="prompt"><button class="copy">Kopiera</button>Jag vill öka [nyckeltal, t.ex. andelen testare som blir betalande].
+                    <div class="prompt"><button class="copy">Kopiera</button>Jag vill öka [nyckeltal, till exempel andelen testare som blir betalande].
 Föreslå fem konkreta experiment jag kan köra på två veckor,
 rangordna efter förväntad effekt delat på arbetsinsats,
 och säg vad jag ska mäta för att veta om de funkar.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="prompt"><button class="copy">Kopiera</button>Räkna på min enhetsekonomi utifrån de här siffrorna:
+pris [X], kostnad per kund [Y], hur länge en kund stannar [Z],
+kostnad att värva en kund [W].
+Visa täckningsbidrag, återbetalningstid och var jag är känsligast.
+Förklara varje uträkning i en mening på vanlig svenska.</div>
+
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
-                        <li>Be Claude skriva en liten beräkning eller graf direkt ur din CSV-fil</li>
-                        <li>Bygg en enkel modell: "om jag lägger X på annonser, vad behöver konverteringen vara?"</li>
+                        <li>Be Claude rita en tratt: hur många faller bort i varje steg från besök till köp</li>
+                        <li>Bygg en enkel modell: "om jag lägger X på annonser, vad behöver konverteringen vara för att gå plus?"</li>
+                        <li>Jämför två månader eller två kohorter och be om vad som skiljer dem åt</li>
+                        <li>Testa hur känslig din affär är för ett prishöjning på 10 procent</li>
                         <li>Få nyckeltalen förklarade på vanlig svenska inför ett investerarsamtal</li>
                     </ul>
                 </div>
@@ -545,10 +570,19 @@ och säg vad jag ska mäta för att veta om de funkar.</div>
             <div class="tab-content" id="slides">
                 <div class="panel">
                     <h3>Slides &amp; pitchdeck</h3>
-                    <p class="what">Från rörig idé till en berättelse som håller. Låt AI:n strukturera storyn och skriva slide-texten, och gör presentationer eller videopresentationer som kan anpassas till olika publiker och språk.</p>
+                    <p class="what">Från rörig idé till en berättelse som håller. Låt AI:n strukturera storyn och skriva slide-texten, och bygg sedan ett snyggt deck eller en videopresentation som går att anpassa till olika publiker och språk.</p>
 
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">Gamma</span><span class="tag">Claude</span><span class="tag">HeyGen</span><span class="tag">Gemini</span></div>
+
+                    <div class="label">Så gör du</div>
+                    <ol class="howto">
+                        <li><strong>Skriv ner allt om bolaget.</strong> Rörigt är okej. Problem, lösning, kunder, siffror, varför just du. Töm huvudet i ett dokument.</li>
+                        <li><strong>Be Claude bygga storyn.</strong> Be om en struktur på tio slides i rätt ordning, med den enda poäng varje slide ska landa.</li>
+                        <li><strong>Be om slide-texten.</strong> Kort. Max ett femtontal ord per slide. Detaljerna sparar du till det du säger, inte till slajden.</li>
+                        <li><strong>Bygg decket i Gamma.</strong> Klistra in strukturen och låt Gamma göra layouten. Putsa färger så det matchar ditt varumärke.</li>
+                        <li><strong>Träna talet.</strong> Be om de jobbigaste frågorna på varje slide och öva svaren tills de sitter.</li>
+                    </ol>
 
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Du är pitch-coach för tidiga startups.
@@ -562,11 +596,12 @@ Skriv om den så den funkar som manus till en två minuters
 videopresentation: kortare meningar, tydlig båge, en stark öppning
 och en avslutning som fastnar.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
                         <li>Gör en svensk och en engelsk version av samma deck</li>
                         <li>Spela in en avatar-presentation i HeyGen för en investerare som inte hinner ses</li>
-                        <li>Be om de tio jobbigaste frågorna en investerare kan ställa på varje slide</li>
+                        <li>Be om de tio jobbigaste frågorna en investerare kan ställa, och korta svar</li>
+                        <li>Ta ett tätt deck och gör en luftigare version för scen</li>
                     </ul>
                 </div>
             </div>
@@ -580,21 +615,31 @@ och en avslutning som fastnar.</div>
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">NotebookLM</span><span class="tag">Perplexity</span><span class="tag">Claude</span><span class="tag">Gemini (Deep Research)</span></div>
 
+                    <div class="label">Så gör du</div>
+                    <ol class="howto">
+                        <li><strong>Samla källorna.</strong> Konkurrenters sajter, prislistor, recensioner, branschrapporter, kundintervjuer. Spara länkar och text.</li>
+                        <li><strong>Lägg dem i NotebookLM.</strong> Då svarar AI:n bara utifrån det du matat in, vilket gör den pålitlig. Använd Perplexity när du vill hitta nya källor.</li>
+                        <li><strong>Be om en jämförelsetabell.</strong> Positionering, pris, målgrupp, styrkor och svagheter, sida vid sida.</li>
+                        <li><strong>Be om luckorna.</strong> Vilket behov eller budskap äger ingen av konkurrenterna idag? Där finns ditt utrymme.</li>
+                    </ol>
+
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Jag lägger in konkurrenternas hemsidor, prislistor och recensioner
 som källor. Gör en jämförelsetabell: positionering, pris, målgrupp,
 styrkor och svagheter. Peka sedan ut tre luckor i marknaden
 som ingen av dem äger.</div>
 
-                    <div class="prompt"><button class="copy">Kopiera</button>Sammanfatta vad de här källorna säger om [trend/marknad]
+                    <div class="prompt"><button class="copy">Kopiera</button>Sammanfatta vad de här källorna säger om [trend eller marknad]
 och vad de INTE är överens om. Skilj på fakta, åsikt och spekulation,
 och hänvisa till vilken källa varje påstående kommer ifrån.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
                         <li>Ladda upp rapporter och artiklar i NotebookLM och fråga rakt på sak</li>
+                        <li>Be Perplexity hitta de senaste siffrorna på din marknad, med källor du kan kontrollera</li>
                         <li>Bygg en kontinuerlig bevakning av en handfull konkurrenter</li>
                         <li>Hitta vilket budskap som är ledigt att ta i din kategori</li>
+                        <li>Sammanfatta tjugo kundrecensioner till de fem vanligaste klagomålen</li>
                     </ul>
                 </div>
             </div>
@@ -603,10 +648,20 @@ och hänvisa till vilken källa varje påstående kommer ifrån.</div>
             <div class="tab-content" id="gtm">
                 <div class="panel">
                     <h3>Go-to-market</h3>
-                    <p class="what">Från "vi har en produkt" till en plan för hur den når rätt personer. AI hjälper dig skärpa vem du är till för, vad du säger och var du möter dem, så du slutar skjuta brett.</p>
+                    <p class="what">Från "vi har en produkt" till en plan för hur den når rätt personer. AI hjälper dig skärpa vem du är till för, vad du säger och var du möter dem, så du slutar skjuta brett och börjar träffa.</p>
 
                     <div class="label">Verktyg</div>
                     <div class="tool-tags"><span class="tag">Claude (Cowork)</span><span class="tag">ChatGPT</span><span class="tag">NotebookLM</span><span class="tag">Lovable / v0</span></div>
+
+                    <div class="label">Så gör du (ta fram en go-to-market-plan)</div>
+                    <ol class="howto">
+                        <li><strong>Mata in allt du vet.</strong> Vad du bygger, vilket problem det löser, vad du sett funka hittills, vilka kunder du redan har. Ju mer kontext, desto skarpare plan.</li>
+                        <li><strong>Skärp din ideala kund.</strong> Be AI:n definiera vem du är till för så konkret att du kan börja kontakta dem imorgon. Pressa tillbaka om svaret är luddigt.</li>
+                        <li><strong>Sätt positioneringen.</strong> Vad är du, mot vad jämförs du, och varför ska någon välja dig? En mening som du kan upprepa i sömnen.</li>
+                        <li><strong>Välj kanaler, max tre.</strong> Be om en plan med vad du gör i varje kanal, ett veckoschema, och de tre siffror du följer. Hellre vasst än brett.</li>
+                        <li><strong>Skriv budskapet och första kontakten.</strong> Be om ett kallt mejl eller DM plus tre uppföljningar, i din ton.</li>
+                        <li><strong>Bygg en landningssida.</strong> Använd Lovable eller v0 för att snabbt resa en sida som fångar intresse, innan du lägger pengar på utveckling.</li>
+                    </ol>
 
                     <div class="label">Prompter</div>
                     <div class="prompt"><button class="copy">Kopiera</button>Du är go-to-market-rådgivare för tidiga bolag.
@@ -620,11 +675,23 @@ Vi har lite tid och liten budget. Föreslå max tre kanaler att fokusera på,
 vad jag gör i varje, ett veckoschema, och vilka tre siffror jag följer
 för att veta om det funkar. Hellre vasst än brett.</div>
 
-                    <div class="label">Exempel</div>
+                    <div class="prompt"><button class="copy">Kopiera</button>Skriv min positionering i en mening enligt mallen:
+"För [kund] som [behov] är [mitt bolag] en [kategori]
+som [unik fördel], till skillnad från [alternativet]."
+Ge mig tre varianter med olika spets.</div>
+
+                    <div class="prompt"><button class="copy">Kopiera</button>Skriv ett första kallt mejl till [typ av kund].
+Kort, personligt, en tydlig anledning att svara, ingen säljjargong.
+Lägg till tre korta uppföljningar att skicka om de inte svarar,
+med några dagars mellanrum. I en varm och rak ton.</div>
+
+                    <div class="label">Fler exempel</div>
                     <ul class="examples-list">
-                        <li>Ta fram budskap som skiljer dig från den du jämförs med</li>
-                        <li>Skriv den första kalla kontakten och tre uppföljningar</li>
-                        <li>Bygg en enkel plan för en lansering inför hösten</li>
+                        <li>Be om budskap som tydligt skiljer dig från den du oftast jämförs med</li>
+                        <li>Ta fram tre olika kundprofiler och vad som triggar köp hos var och en</li>
+                        <li>Skriv en enkel lanseringsplan för hösten med vad som ska hända vilken vecka</li>
+                        <li>Be om en lista på var dina kunder faktiskt hänger, både digitalt och fysiskt</li>
+                        <li>Gör en brief till en landningssida och bygg den direkt i Lovable eller v0</li>
                     </ul>
                 </div>
             </div>
@@ -643,11 +710,11 @@ för att veta om det funkar. Hellre vasst än brett.</div>
                 </div>
                 <div class="bling-item">
                     <h4>Bygg traction-storyn</h4>
-                    <p>Klistra in dina siffror och be om den ärligaste, mest övertygande berättelsen de bär — utan att överdriva. Domarna ser igenom luft.</p>
+                    <p>Klistra in dina siffror och be om den ärligaste, mest övertygande berättelsen de bär, utan att överdriva. Domarna ser igenom luft.</p>
                 </div>
                 <div class="bling-item">
                     <h4>Förbered investerar-Q&amp;A</h4>
-                    <p>Träna svaren på frågor om marknad, konkurrens och affärsmodell. Be AI:n peka ut var ditt resonemang är svagast — och fyll igen.</p>
+                    <p>Träna svaren på frågor om marknad, konkurrens och affärsmodell. Be AI:n peka ut var ditt resonemang är svagast, och fyll igen.</p>
                 </div>
             </div>
         </div>
@@ -657,7 +724,7 @@ för att veta om det funkar. Hellre vasst än brett.</div>
     <div class="container">
         <div class="section" id="verktyg">
             <h2 class="section-title">Verktygslådan</h2>
-            <p class="section-lead">Det finns hundra verktyg. De här räcker långt — och flera av dem använder jag själv varje vecka.</p>
+            <p class="section-lead">Det finns hundra verktyg. De här räcker långt, och flera av dem använder jag själv varje vecka.</p>
             <div class="tools-grid">
                 <div class="tool-card">
                     <div class="name">Claude (Cowork / Code)</div>
@@ -667,7 +734,7 @@ för att veta om det funkar. Hellre vasst än brett.</div>
                 <div class="tool-card">
                     <div class="name">NotebookLM</div>
                     <div class="use">Summera &amp; hitta mönster</div>
-                    <p>När jag har många källor — rapporter, artiklar, anteckningar — och vill se vad de säger tillsammans. Svarar bara utifrån det du matar in, vilket gör det pålitligt för research.</p>
+                    <p>När jag har många källor som rapporter, artiklar och anteckningar, och vill se vad de säger tillsammans. Svarar bara utifrån det du matar in, vilket gör det pålitligt för research.</p>
                 </div>
                 <div class="tool-card">
                     <div class="name">Descript</div>
@@ -692,12 +759,12 @@ för att veta om det funkar. Hellre vasst än brett.</div>
                 <div class="tool-card">
                     <div class="name">Gamma</div>
                     <div class="use">Pitchdeck &amp; slides</div>
-                    <p>Gör en hel presentation från en prompt — struktur, text och layout på en gång. Snabbaste vägen till ett snyggt deck inför Bling utan att öppna PowerPoint.</p>
+                    <p>Gör en hel presentation från en prompt: struktur, text och layout på en gång. Snabbaste vägen till ett snyggt deck inför Bling utan att öppna PowerPoint.</p>
                 </div>
                 <div class="tool-card">
                     <div class="name">Perplexity</div>
                     <div class="use">Research med källor</div>
-                    <p>Svarar på frågor om marknad och konkurrenter och visar var svaret kommer ifrån. Komplement till NotebookLM: den läser dina källor, Perplexity hittar nya.</p>
+                    <p>Svarar på frågor om marknad och konkurrenter och visar var svaret kommer ifrån. Komplement till NotebookLM som läser dina källor, medan Perplexity hittar nya.</p>
                 </div>
                 <div class="tool-card">
                     <div class="name">Canva (Magic Studio)</div>
@@ -717,13 +784,13 @@ för att veta om det funkar. Hellre vasst än brett.</div>
     <div class="container">
         <div class="section" id="fallgropar">
             <h2 class="section-title">Tre saker att hålla koll på</h2>
-            <div class="card pitfalls">
-                <ul>
+            <div class="card">
+                <ul class="examples-list">
                     <li><strong>Den hittar på ibland.</strong>&nbsp; AI låter självsäker även när den har fel. Faktagranska siffror, citat och påståenden innan de lämnar ditt skrivbord.</li>
                     <li><strong>Var försiktig med vad du matar in.</strong>&nbsp; Klistra inte in känslig kund- eller persondata i verktyg du inte vet hur de hanterar den. Avidentifiera när du tvekar.</li>
                     <li><strong>Rösten ska vara din.</strong>&nbsp; AI tar dig till ett utkast. Det är du som gör det till något som låter som du och som du kan stå för. Omdömet stannar hos dig.</li>
                 </ul>
-                <p style="margin-top:20px; font-size:17px;">Använd AI för att förstärka det du redan kan, inte för att ersätta din egen tanke. Då blir det ett verktyg som gör dig vassare, inte en genväg som gör dig generisk.</p>
+                <p style="margin-top:22px; font-size:17px; line-height:1.6; color:#7A4864;">Använd AI för att förstärka det du redan kan. Då blir det ett verktyg som gör dig vassare. Lutar du dig på det för allt blir resultatet lätt platt, och det märks.</p>
             </div>
         </div>
     </div>
@@ -732,7 +799,7 @@ för att veta om det funkar. Hellre vasst än brett.</div>
         <p><strong>We Should Be Friends AB</strong></p>
         <p>Strategi, kommunikation och digitala upplevelser med människan först.</p>
         <p>Stockholm · <a href="https://paulinamodlitba.github.io/">paulinamodlitba.github.io</a></p>
-        <p style="margin-top:16px; font-size:13px; color:#C87C5C;">Material från Paulinas föreläsning inför Bling Startup</p>
+        <p style="margin-top:16px; font-size:14px; color:#FFE8E0;">Lycka till i Bling Startup. Hör av dig om du vill bolla något.</p>
     </div>
 
     <script>
