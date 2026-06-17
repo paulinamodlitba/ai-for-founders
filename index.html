@@ -7,8 +7,19 @@
     <meta name="description" content="Konkreta sätt att använda generativ AI som grundare: innehåll, infografik, sociala medier, siffror, slides, omvärldsanalys och go-to-market. Med prompter du kan kopiera rakt av och steg-för-steg-guider.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --red: #FF0038;
+            --ink: #141118;
+            --muted: #5C5860;
+            --bg: #ECEAE6;
+            --line: rgba(20, 17, 24, 0.14);
+            --dark: #170E29;
+            --dark2: #2A1A47;
+            --soft: #F4F2EE;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,35 +27,36 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
-            color: #411B38;
-            background: #FFF6F0;
+            color: var(--ink);
+            background: var(--bg);
         }
 
+        /* Red Bling hero */
         .hero {
             text-align: center;
-            padding: 90px 20px 60px;
-            background: linear-gradient(135deg, #FFF6F0 0%, #FFE8E0 100%);
+            padding: 96px 20px 72px;
+            background: var(--red);
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.005em;
-            margin-bottom: 18px;
-            color: #411B38;
-            max-width: 820px;
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
+            color: #000;
+            max-width: 880px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero .subtitle {
-            font-size: 22px;
-            line-height: 1.4;
+            font-size: 21px;
+            line-height: 1.45;
             font-weight: 400;
-            color: #7A4864;
+            color: #1a0008;
             margin-bottom: 8px;
             max-width: 700px;
             margin-left: auto;
@@ -52,116 +64,131 @@
         }
 
         .hero .bling-note {
-            font-size: 16px;
-            color: #C87C5C;
-            font-weight: 500;
-            margin-top: 16px;
+            font-size: 14px;
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 22px;
         }
 
         .container {
-            max-width: 980px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 22px;
         }
 
         .section {
-            padding: 60px 0;
+            padding: 64px 0;
+        }
+
+        .eyebrow {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 14px;
         }
 
         .section-title {
             font-size: 40px;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.1;
-            letter-spacing: -0.003em;
+            letter-spacing: -0.01em;
             margin-bottom: 16px;
             text-align: center;
-            color: #411B38;
+            color: var(--ink);
         }
 
         .section-lead {
             text-align: center;
             font-size: 19px;
             line-height: 1.55;
-            color: #7A4864;
-            max-width: 720px;
+            color: var(--muted);
+            max-width: 740px;
             margin: 0 auto 40px;
         }
 
         .card {
             background: white;
-            border-radius: 18px;
-            padding: 48px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(65, 27, 56, 0.08);
-            border: 1px solid rgba(65, 27, 56, 0.06);
+            border-radius: 8px;
+            padding: 44px;
+            margin-bottom: 22px;
+            border: 1px solid var(--line);
         }
 
         .note-box {
             background: white;
-            border-radius: 18px;
-            padding: 40px 48px;
+            border-radius: 8px;
+            padding: 38px 44px;
             margin: 0 auto;
             font-size: 17px;
             line-height: 1.65;
-            color: #411B38;
-            border-left: 5px solid #C87C5C;
-            box-shadow: 0 4px 20px rgba(65, 27, 56, 0.08);
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--red);
         }
 
-        .note-box strong { font-weight: 600; color: #411B38; }
+        .note-box strong { font-weight: 700; color: var(--ink); }
 
         .anatomy {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 14px;
             margin-top: 24px;
         }
 
         .anatomy div {
-            background: #FFF6F0;
-            border-radius: 12px;
+            background: var(--soft);
+            border-radius: 6px;
             padding: 18px 20px;
-            border: 1px solid rgba(65, 27, 56, 0.08);
+            border: 1px solid var(--line);
         }
 
         .anatomy span {
             display: block;
-            font-weight: 600;
-            color: #C87C5C;
+            font-weight: 700;
+            color: var(--red);
             margin-bottom: 4px;
-            font-size: 15px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
 
-        .anatomy p { font-size: 15px; color: #7A4864; line-height: 1.5; }
+        .anatomy p { font-size: 15px; color: var(--muted); line-height: 1.5; }
 
-        /* Tabs */
+        /* Tabs, Bling-style squared uppercase */
         .tabs {
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             flex-wrap: wrap;
         }
 
         .tab-btn {
             background: white;
-            border: 2px solid #411B38;
-            padding: 11px 24px;
-            border-radius: 980px;
-            font-size: 16px;
-            font-weight: 500;
+            border: 2px solid var(--ink);
+            padding: 11px 22px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.2s ease;
-            color: #411B38;
-            font-family: 'Inter', sans-serif;
+            transition: all 0.15s ease;
+            color: var(--ink);
+            font-family: 'Sora', sans-serif;
         }
 
-        .tab-btn:hover { background: #FFE8E0; }
+        .tab-btn:hover { background: var(--ink); color: white; }
 
         .tab-btn.active {
-            background: #411B38;
+            background: var(--red);
             color: white;
-            border-color: #411B38;
+            border-color: var(--red);
         }
 
         .tab-content { display: none; }
@@ -174,32 +201,32 @@
 
         .panel {
             background: white;
-            border-radius: 18px;
-            padding: 48px;
-            box-shadow: 0 4px 20px rgba(65, 27, 56, 0.08);
-            border: 1px solid rgba(65, 27, 56, 0.06);
+            border-radius: 8px;
+            padding: 44px;
+            border: 1px solid var(--line);
         }
 
         .panel h3 {
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 12px;
-            color: #411B38;
+            color: var(--ink);
+            letter-spacing: -0.01em;
         }
 
         .panel .what {
             font-size: 18px;
             line-height: 1.6;
-            color: #7A4864;
+            color: var(--muted);
             margin-bottom: 28px;
         }
 
         .label {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #C87C5C;
+            color: var(--red);
             margin: 30px 0 14px;
         }
 
@@ -207,13 +234,13 @@
 
         .tag {
             display: inline-block;
-            background: #FFF6F0;
-            border: 1px solid rgba(65, 27, 56, 0.12);
-            color: #411B38;
-            padding: 7px 16px;
-            border-radius: 980px;
-            font-size: 15px;
-            font-weight: 500;
+            background: var(--soft);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            padding: 7px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         /* Så gör du, numbered walkthrough */
@@ -223,7 +250,7 @@
             padding: 4px 0 18px 50px;
             font-size: 16.5px;
             line-height: 1.55;
-            color: #411B38;
+            color: var(--ink);
         }
         .howto li:last-child { padding-bottom: 0; }
         .howto li:before {
@@ -234,25 +261,25 @@
             top: 0;
             width: 34px;
             height: 34px;
-            background: linear-gradient(135deg, #C87C5C 0%, #D68D6C 100%);
+            background: var(--red);
             color: white;
-            border-radius: 50%;
+            border-radius: 4px;
             text-align: center;
             line-height: 34px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
         }
-        .howto strong { font-weight: 600; }
+        .howto strong { font-weight: 700; }
 
         /* Prompt block with copy button */
         .prompt {
             position: relative;
-            background: #411B38;
-            border-radius: 12px;
+            background: var(--dark);
+            border-radius: 6px;
             padding: 22px 24px;
             padding-top: 46px;
             margin-top: 14px;
-            color: #FFE8E0;
+            color: #EFE7F5;
             font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
             font-size: 14.5px;
             line-height: 1.65;
@@ -263,20 +290,22 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(255, 232, 224, 0.12);
-            border: 1px solid rgba(255, 232, 224, 0.3);
-            color: #FFE8E0;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
+            background: var(--red);
+            border: none;
+            color: white;
+            font-family: 'Sora', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
             padding: 6px 14px;
-            border-radius: 980px;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.15s ease;
         }
 
-        .prompt .copy:hover { background: rgba(255, 232, 224, 0.22); }
-        .prompt .copy.done { background: #C87C5C; border-color: #C87C5C; color: white; }
+        .prompt .copy:hover { background: #d6002f; }
+        .prompt .copy.done { background: #1f9d55; }
 
         .examples-list { list-style: none; padding: 0; margin-top: 6px; }
 
@@ -284,8 +313,8 @@
             font-size: 16.5px;
             line-height: 1.55;
             padding: 13px 0;
-            color: #411B38;
-            border-bottom: 1px solid #FFF6F0;
+            color: var(--ink);
+            border-bottom: 1px solid var(--line);
             display: flex;
             align-items: flex-start;
         }
@@ -293,73 +322,92 @@
         .examples-list li:before {
             content: "→";
             margin-right: 12px;
-            color: #C87C5C;
-            font-weight: 600;
+            color: var(--red);
+            font-weight: 700;
         }
 
-        /* Bling section */
+        /* Dark eggplant feature section (Bling) */
         .bling {
-            background: linear-gradient(135deg, #411B38 0%, #5A2E48 100%);
-            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+            background: var(--dark);
+            border-radius: 8px;
             padding: 64px 56px;
             margin: 40px 0;
             color: white;
         }
 
-        .bling h2 { font-size: 38px; font-weight: 700; margin-bottom: 14px; color: white; }
-        .bling .lead { font-size: 19px; line-height: 1.6; color: #FFE8E0; margin-bottom: 36px; max-width: 660px; }
-
-        .bling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-        .bling-item {
-            background: rgba(255, 246, 240, 0.07);
-            border: 1px solid rgba(255, 232, 224, 0.18);
-            border-radius: 14px;
-            padding: 26px 24px;
+        /* Tiled chevron pattern, evokes Bling's monogram texture without copying the wordmark */
+        .bling::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84'%3E%3Cpath d='M22 22 L42 42 L22 62 M44 22 L64 42 L44 62' fill='none' stroke='%232E1B4F' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: 84px 84px;
+            pointer-events: none;
         }
 
-        .bling-item h4 { font-size: 19px; font-weight: 600; margin-bottom: 10px; color: white; }
-        .bling-item p { font-size: 15.5px; line-height: 1.55; color: #FFE8E0; }
+        .bling > * { position: relative; z-index: 1; }
+
+        .bling .eyebrow { text-align: left; color: var(--red); }
+        .bling h2 { font-size: 38px; font-weight: 800; margin-bottom: 14px; color: white; letter-spacing: -0.01em; }
+        .bling .lead { font-size: 19px; line-height: 1.6; color: #D9CFE6; margin-bottom: 36px; max-width: 660px; }
+
+        .bling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+        .bling-item {
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 0;
+            padding: 30px 28px 26px;
+            display: flex;
+            flex-direction: column;
+            min-height: 230px;
+        }
+
+        .bling-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 12px; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+        .bling-item p { font-size: 15.5px; line-height: 1.55; color: #C9BEDA; flex: 1; }
+        .bling-item .arrow { font-size: 24px; color: white; margin-top: 20px; line-height: 1; }
 
         /* Toolbox grid */
-        .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
         .tool-card {
             background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(65, 27, 56, 0.08);
-            border: 1px solid rgba(65, 27, 56, 0.06);
+            border-radius: 8px;
+            padding: 28px;
+            border: 1px solid var(--line);
         }
 
-        .tool-card .name { font-size: 21px; font-weight: 600; color: #411B38; margin-bottom: 4px; }
-        .tool-card .use { font-size: 14px; font-weight: 600; color: #C87C5C; margin-bottom: 12px; }
-        .tool-card p { font-size: 16px; line-height: 1.55; color: #7A4864; }
+        .tool-card .name { font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.01em; }
+        .tool-card .use { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+        .tool-card p { font-size: 16px; line-height: 1.55; color: var(--muted); }
 
+        /* Red Bling footer */
         .footer {
             text-align: center;
-            padding: 60px 22px;
-            background: linear-gradient(135deg, #411B38 0%, #5A2E48 100%);
-            margin-top: 60px;
-            color: white;
+            padding: 64px 22px;
+            background: var(--red);
+            margin-top: 64px;
+            color: #000;
         }
 
-        .footer p { font-size: 15px; line-height: 1.6; color: #FFE8E0; margin-bottom: 8px; }
-        .footer strong { color: white; }
-        .footer a { color: #FFE8E0; }
+        .footer p { font-size: 15px; line-height: 1.6; color: #1a0008; margin-bottom: 8px; }
+        .footer strong { color: #000; font-weight: 800; font-size: 17px; }
+        .footer a { color: #000; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .hero { padding: 70px 20px 50px; }
-            .hero h1 { font-size: 38px; }
+            .hero { padding: 72px 20px 52px; }
+            .hero h1 { font-size: 34px; }
             .hero .subtitle { font-size: 18px; }
-            .section-title { font-size: 30px; }
-            .card, .panel, .note-box { padding: 32px 24px; }
-            .bling { padding: 44px 28px; }
-            .bling h2 { font-size: 30px; }
+            .section-title { font-size: 29px; }
+            .card, .panel, .note-box { padding: 30px 22px; }
+            .bling { padding: 40px 26px; }
+            .bling h2 { font-size: 29px; }
             .anatomy { grid-template-columns: 1fr; }
             .bling-grid { grid-template-columns: 1fr; }
             .tools-grid { grid-template-columns: 1fr; }
-            .tab-btn { padding: 9px 18px; font-size: 15px; }
+            .tab-btn { padding: 9px 16px; font-size: 12px; }
         }
     </style>
 </head>
@@ -367,13 +415,14 @@
     <div class="hero">
         <h1>Så gör du generativ AI till en superkraft för dig som entreprenör</h1>
         <p class="subtitle">Med rätt verktyg gör ett litet team jobbet som annars kräver en hel avdelning. Här är greppen och prompterna jag använder själv, redo att kopiera och köra.</p>
-        <p class="bling-note">Jag har samlat det här till er som tävlar i Bling Startup i höst.</p>
+        <p class="bling-note">Samlat till er som tävlar i Bling Startup i höst</p>
     </div>
 
     <div class="container">
 
         <!-- GRUNDERNA -->
         <div class="section" id="grunderna">
+            <p class="eyebrow">Grunderna</p>
             <h2 class="section-title">Det mesta avgörs av vad du matar in</h2>
             <p class="section-lead">Samma verktyg ger allt från medelmåttigt till riktigt vasst, och skillnaden ligger nästan alltid i din input. Ju mer du ger AI:n att jobba med, vem du är, vad du försöker lösa och hur ett bra svar ser ut, desto mer användbart kommer tillbaka.</p>
             <div class="note-box">
@@ -389,6 +438,7 @@
 
         <!-- ANVÄNDNINGSOMRÅDEN -->
         <div class="section" id="omraden">
+            <p class="eyebrow">Verktyg &amp; prompter</p>
             <h2 class="section-title">Sju saker du kan göra redan idag</h2>
             <p class="section-lead">Klicka dig mellan områdena. Varje flik har vad det är bra för, vilka verktyg som passar, en gång igenom steg för steg, prompter att kopiera och konkreta exempel.</p>
 
@@ -701,20 +751,24 @@ med några dagars mellanrum. I en varm och rak ton.</div>
     <!-- BLING -->
     <div class="container">
         <div class="bling" id="bling">
+            <p class="eyebrow">Tävlingen</p>
             <h2>Inför Bling Startup</h2>
             <p class="lead">Tävlingen handlar om att övertyga. Här är tre ställen där AI ger mest tillbaka när du förbereder dig under hösten.</p>
             <div class="bling-grid">
                 <div class="bling-item">
                     <h4>Slipa pitchen</h4>
                     <p>Låt AI:n vara din hårdaste publik. Be om de jobbigaste frågorna, korta ner storyn, och öva tills du svarar utan att tveka.</p>
+                    <span class="arrow">→</span>
                 </div>
                 <div class="bling-item">
                     <h4>Bygg traction-storyn</h4>
                     <p>Klistra in dina siffror och be om den ärligaste, mest övertygande berättelsen de bär, utan att överdriva. Domarna ser igenom luft.</p>
+                    <span class="arrow">→</span>
                 </div>
                 <div class="bling-item">
                     <h4>Förbered investerar-Q&amp;A</h4>
                     <p>Träna svaren på frågor om marknad, konkurrens och affärsmodell. Be AI:n peka ut var ditt resonemang är svagast, och fyll igen.</p>
+                    <span class="arrow">→</span>
                 </div>
             </div>
         </div>
@@ -723,7 +777,8 @@ med några dagars mellanrum. I en varm och rak ton.</div>
     <!-- VERKTYGSLÅDAN -->
     <div class="container">
         <div class="section" id="verktyg">
-            <h2 class="section-title">Verktygslådan</h2>
+            <p class="eyebrow">Verktygslådan</p>
+            <h2 class="section-title">Tio verktyg som räcker långt</h2>
             <p class="section-lead">Det finns hundra verktyg. De här räcker långt, och flera av dem använder jag själv varje vecka.</p>
             <div class="tools-grid">
                 <div class="tool-card">
@@ -783,6 +838,7 @@ med några dagars mellanrum. I en varm och rak ton.</div>
     <!-- FALLGROPAR -->
     <div class="container">
         <div class="section" id="fallgropar">
+            <p class="eyebrow">Att tänka på</p>
             <h2 class="section-title">Tre saker att hålla koll på</h2>
             <div class="card">
                 <ul class="examples-list">
@@ -790,7 +846,7 @@ med några dagars mellanrum. I en varm och rak ton.</div>
                     <li><strong>Var försiktig med vad du matar in.</strong>&nbsp; Klistra inte in känslig kund- eller persondata i verktyg du inte vet hur de hanterar den. Avidentifiera när du tvekar.</li>
                     <li><strong>Rösten ska vara din.</strong>&nbsp; AI tar dig till ett utkast. Det är du som gör det till något som låter som du och som du kan stå för. Omdömet stannar hos dig.</li>
                 </ul>
-                <p style="margin-top:22px; font-size:17px; line-height:1.6; color:#7A4864;">Använd AI för att förstärka det du redan kan. Då blir det ett verktyg som gör dig vassare. Lutar du dig på det för allt blir resultatet lätt platt, och det märks.</p>
+                <p style="margin-top:22px; font-size:17px; line-height:1.6; color:var(--muted);">Använd AI för att förstärka det du redan kan. Då blir det ett verktyg som gör dig vassare. Lutar du dig på det för allt blir resultatet lätt platt, och det märks.</p>
             </div>
         </div>
     </div>
@@ -799,7 +855,7 @@ med några dagars mellanrum. I en varm och rak ton.</div>
         <p><strong>We Should Be Friends AB</strong></p>
         <p>Strategi, kommunikation och digitala upplevelser med människan först.</p>
         <p>Stockholm · <a href="https://paulinamodlitba.github.io/">paulinamodlitba.github.io</a></p>
-        <p style="margin-top:16px; font-size:14px; color:#FFE8E0;">Lycka till i Bling Startup. Hör av dig om du vill bolla något.</p>
+        <p style="margin-top:16px; font-size:14px;">Lycka till i Bling Startup. Hör av dig om du vill bolla något.</p>
     </div>
 
     <script>
